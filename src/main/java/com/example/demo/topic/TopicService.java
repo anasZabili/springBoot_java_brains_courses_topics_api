@@ -1,4 +1,4 @@
-package demo.topic;
+package com.example.demo.topic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
