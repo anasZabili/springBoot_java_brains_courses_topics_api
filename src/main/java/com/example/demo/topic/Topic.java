@@ -1,6 +1,14 @@
 package com.example.demo.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.springframework.context.annotation.Primary;
+
+@Entity
 public class Topic {
+
+  @Id
   private String id;
   private String name;
   private String description;

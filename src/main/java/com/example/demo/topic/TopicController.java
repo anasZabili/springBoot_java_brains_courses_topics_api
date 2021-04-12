@@ -2,6 +2,7 @@ package com.example.demo.topic;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,12 @@ public class TopicController {
 
   @RequestMapping("/topics/{id}")
   public Topic getTopic(@PathVariable String id) {
-    return topicService.getTopic(id);
+    Optional<Topic> topic = topicService.getTopic(id);
+    if (topic.isPresent()) {
+      return topic.get();
+    } else {
+      return null;
+    }
   }
 
   @RequestMapping(method = RequestMethod.POST, value = "/topics")
